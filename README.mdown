@@ -34,6 +34,8 @@ You can pass a set of options to customize:
 
 You can see it in action in [CrowdVoice](http://crowdvoice.org)
 
+<iframe src="http://player.vimeo.com/video/14456854" width="400" height="300" frameborder="0"></iframe><p><a href="http://vimeo.com/14456854">Pageslide Examples</a> from <a href="http://vimeo.com/user1061961">Empowerkit</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+
 ## Credits
 
 This is a modification of the [original pageSlide](http://srobbin.com/blog/jquery-pageslide/)
