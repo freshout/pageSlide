@@ -2,7 +2,7 @@
  * PageSlide jQuery plugin.
  * 
  * # Modification of the Scott Robbin's pageSlide plugin
- * # Check it out at http://github.com/organizations/freshout
+ * # Check it out at http://github.com/freshout/pageSlide
  *
 */
 

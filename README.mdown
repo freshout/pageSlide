@@ -28,6 +28,10 @@ You can pass a set of options to customize:
 * `copyUrlImgPath` Path to the image of the copy url button.
 * `viewOrigImgPath` Path to the image of the view original button.
 
+## Demo
+
+You can see it in action in [CrowdVoice](http://crowdvoice.org)
+
 **Note** You need to include the zeroClipboard plugin as well to make the copy URL button work.
 
 ## Credits
