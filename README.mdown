@@ -1,0 +1,43 @@
+# PageSlide jQuery plugin
+
+Open your external links in a slide and stay on your original site.
+
+You can **navigate** through all the links that you specify without closing the slide.
+And you have buttons to **copy** or **view** the original URL, and a **facebook sharer button**.
+
+## Disclaimer
+
+There are some sites that detect they're being opened from an iframe, and they will redirect you to the
+original site in the top window.
+
+## Example
+
+Just bind the plugin to the links you want to open in a slide:
+
+`$('.pageSlide').pageSlide({height: '85%', modal: true, bookmarkers: false})`
+
+You can pass a set of options to customize:
+
+* `height` The height of the slide.
+* `bookmarkers` Wether or not you want to show the right facebook button to share the url.
+* `label` Text to display on the back arrow.
+* `duration` Speed of animation.
+* `direction` Direction of the animation (top or bottom).
+* `opacity` Opacity of the modal overlay.
+* `collectionSelector` CSS selector to fetch all the links you want to navigate through.
+* `copyUrlImgPath` Path to the image of the copy url button.
+* `viewOrigImgPath` Path to the image of the view original button.
+
+**Note** You need to include the zeroClipboard plugin as well to make the copy URL button work.
+
+## Credits
+
+This is a modification of the [original pageSlide](http://srobbin.com/blog/jquery-pageslide/)
+plugin by Scott Robbin.
+
+## Contributors
+
+* Felix Lau
+* Edgar J. Suárez
+
+Check out our [other open source projects](http://github.com/organizations/freshout).
