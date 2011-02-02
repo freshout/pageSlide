@@ -8,7 +8,6 @@
 
 (function($) {
     $.fn.pageSlide = function(options) {
-        
         var settings = $.extend({
             height: '85%',
             loading: false,
@@ -20,7 +19,7 @@
             modal: false,
             collectionSelector: '.page-slide',
             copyUrlImgPath: 'images/copyurl_icon.png', 
-            viewOrigImgPath: 'images/ps/vieworiginal_icon.png',
+            viewOrigImgPath: 'images/vieworiginal_icon.png',
             _identifier: $(this)
         }, options);
         var pageslide_slide_wrap_css = {
