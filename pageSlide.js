@@ -66,7 +66,11 @@ $.fn.pageSlide = function(opts) {
     $('<iframe />').attr('id', 'pageslide-iframe').appendTo(psSlideContent);
 
     $('<div />').attr('id', 'pageslide-slide-wrap').append(psSlideContent).appendTo(body);
-
+    
+    $('<div />').attr("id", "pageslide-blanket").appendTo(body).click(function(){
+      return false;
+    });
+    
     $(window).resize(function() {
     $('#pageslide-body-wrap').width(body.width());
     });
@@ -103,6 +107,16 @@ $.fn.pageSlide = function(opts) {
     }).attr('href', "http://www.facebook.com/sharer.php?u="+encodeURIComponent(url));
   }
   
+  function _showBlanket() {                   
+    $("#pageslide-blanket").css('height', page.height()).toggle().animate({opacity: '0.25'}, 'fast', 'linear');
+  }
+  
+  function _hideBlanket() {
+    $("#pageslide-blanket").is(":visible") && $("#pageslide-blanket").animate({opacity: '0.0'}, 'fast', 'linear', function () {
+      $(this).hide();
+    });
+  }
+  
   function _openSlide(elm) {
     var psWrap = $('#pageslide-slide-wrap'),
         psBodyWrap = $('#pageslide-body-wrap'),
@@ -111,8 +125,9 @@ $.fn.pageSlide = function(opts) {
     if(psWrap.height() != 0) { 
       return false;
     }
-    var direction = {};
-    var new_height = settings.height.charAt(settings.height.length - 1) == '%' ? Math.ceil($(window).height() * parseFloat(settings.height) / 100) + 'px' : settings.height;
+    _showBlanket();
+    var direction = {},
+        new_height = settings.height.charAt(settings.height.length - 1) == '%' ? Math.ceil($(window).height() * parseFloat(settings.height) / 100) + 'px' : settings.height;
     if(settings.direction === 'bottom') {
       direction = {
         bottom: '-' + new_height
@@ -153,6 +168,7 @@ $.fn.pageSlide = function(opts) {
   
   collection.bind('closePageSlide', function(event){
       if(event.button != 2 && $('#pageslide-slide-wrap').height() != 0){
+        _hideBlanket();
         body.css('height', 'auto');
         $('#pageslide-slide-wrap').animate({height: 0}, settings.duration, function() {
           $('#pageslide-content').css('height', '0px').hide();
@@ -195,3 +211,7 @@ $(function() {
     $("#pageslide-blanket").is(":visible") && event.keyCode == 27 && $('a').trigger('closePageSlide');
   });
 });
+
+$(window).load(function(){
+  $('#pageslide-blanket').css('min-height', $(document).height());
+})

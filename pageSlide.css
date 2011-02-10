@@ -125,3 +125,5 @@ body {
 #glueButton {
   position: relative;
 }
+
+#pageslide-blanket{position: absolute; top: 0; left: 0; height: 100%; width: 100%; opacity: 0; background: #000; z-index: 1; display: none;}
